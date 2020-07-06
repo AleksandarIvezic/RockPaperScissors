@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+   
+    
+
+    <script>
+        
+        function computerPlay() {
+            let a = Math.random();
+            if ( a <= 0.33) {
+                return "Rock";
+            }else if (a <= 0.66) {
+                return "Paper";
+            }else {
+                return "Scissors";
+            }
+        }
+       
+        function playSingleRound (playerSelection, computerSelection) {
+
+            console.log (`You chose ${playerSelection}, and computer chose ${computerSelection}!` );
+            
+            if (playerSelection === computerSelection) {
+                return "You are equal!";
+
+            }else if (playerSelection === "Rock" && computerSelection === "Paper") {
+                return "You Lose! Paper beats Rock!";
+            }else if  (playerSelection === "Rock" && computerSelection === "Scissors") {
+                return "You Win! Rock beats Scissors!";
+
+            }else if  (playerSelection === "Paper" && computerSelection === "Rock") {
+                return "You Win! Paper beats Rock!";
+            }else if  (playerSelection === "Paper" && computerSelection === "Scissors") {
+                return "You Lose! Scissors beats Paper!";
+
+            }else if  (playerSelection === "Scissors" && computerSelection === "Rock") {
+                return "You Lose! Rock beats Scissors!";
+            }else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+                return "You Win! Scissors beats Paper!";
+               
+             }else {
+                
+                 return "Please enter Rock, Scissors or Paper";
+             }
+        }
+
+        function capitalize (str) {
+            
+            str.toLowerCase();
+            let a = str.replace(str[0], str[0].toUpperCase());
+            return a;
+        }
+
+        // MULTIPLE TIME
+        function game() {
+            
+            for (let i=0; i <5 ; i++) {
+                let computerSelection =computerPlay();
+                let playerSelection = prompt("Please enter Rock, Scissors or Paper", "Rock"); 
+                if (!playerSelection) {
+                    i--;
+                    console.log ("Please enter correct value in the field!");
+                }else {
+                    playerSelection = capitalize(playerSelection);
+                    console.log(playSingleRound(playerSelection, computerSelection)) ;
+                }
+               
+            }
+        }
+
+        // SINGLE TIME
+        // let playerSelection = "rock";
+        // playerSelection = capitalize(playerSelection);
+        // let computerSelection = computerPlay();
+        // console.log(computerSelection);
+        // console.log(playerSelection);
+        // console.log(playSingleRound(playerSelection, computerSelection));
+        
+        console.log(game());
+    </script>
+</body>
+</html>
