@@ -27,7 +27,7 @@
             console.log (`You chose ${playerSelection}, and computer chose ${computerSelection}!` );
             
             if (playerSelection === computerSelection) {
-                return "You are equal!";
+                return "It's draw!";
 
             }else if (playerSelection === "Rock" && computerSelection === "Paper") {
                 return "You Lose! Paper beats Rock!";
@@ -62,7 +62,7 @@
             
             for (let i=0; i <5 ; i++) {
                 let computerSelection =computerPlay();
-                let playerSelection = prompt("Please enter Rock, Scissors or Paper", "Rock"); 
+                let playerSelection = prompt("Please enter Rock, Scissors or Paper!  Open console to check results!", "Rock"); 
                 if (!playerSelection) {
                     i--;
                     console.log ("Please enter correct value in the field!");
