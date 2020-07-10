@@ -3,86 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock-Paper-Scissors</title>
 </head>
+
 <body>
-   
+   <header>
+       <h1> ROCK - PAPER - SCISSORS</h1>
+
+   </header>
+   <main class="container">
+       <div class="btns">
+           <button class = "btn" id="Rock">ROCK <img src="/img/rock.png" alt=""></button>
+           <button class = "btn" id="Paper">PAPER <img src="img/paper.png" alt=""></button>
+           <button class = "btn" id="Scissors">SCISSORS <img src="/img/scissors.png" alt=""></button>
+       </div>
+       <div class="score">
+            <div class="player">
+                <h3>Player</h3>
+                <p></p>
+            </div>
+            <div class="rounds">
+                <h2><span id="pScore">0</span> - <span id="cScore">0</span></h2>
+                <p></p>
+            </div>
+            <div class="computer">
+                <h3>Computer</h3>
+                <p></p>
+            </div>
+            
+       </div>
+       <div class="game-over">
+           <h2></h2>
+       </div>
+   </main>
+    
     
 
-    <script>
-        
-        function computerPlay() {
-            let a = Math.random();
-            if ( a <= 0.33) {
-                return "Rock";
-            }else if (a <= 0.66) {
-                return "Paper";
-            }else {
-                return "Scissors";
-            }
-        }
-       
-        function playSingleRound (playerSelection, computerSelection) {
-
-            console.log (`You chose ${playerSelection}, and computer chose ${computerSelection}!` );
-            
-            if (playerSelection === computerSelection) {
-                return "It's draw!";
-
-            }else if (playerSelection === "Rock" && computerSelection === "Paper") {
-                return "You Lose! Paper beats Rock!";
-            }else if  (playerSelection === "Rock" && computerSelection === "Scissors") {
-                return "You Win! Rock beats Scissors!";
-
-            }else if  (playerSelection === "Paper" && computerSelection === "Rock") {
-                return "You Win! Paper beats Rock!";
-            }else if  (playerSelection === "Paper" && computerSelection === "Scissors") {
-                return "You Lose! Scissors beats Paper!";
-
-            }else if  (playerSelection === "Scissors" && computerSelection === "Rock") {
-                return "You Lose! Rock beats Scissors!";
-            }else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-                return "You Win! Scissors beats Paper!";
-               
-             }else {
-                
-                 return "Please enter Rock, Scissors or Paper";
-             }
-        }
-
-        function capitalize (str) {
-            
-            str.toLowerCase();
-            let a = str.replace(str[0], str[0].toUpperCase());
-            return a;
-        }
-
-        // MULTIPLE TIME
-        function game() {
-            
-            for (let i=0; i <5 ; i++) {
-                let computerSelection =computerPlay();
-                let playerSelection = prompt("Please enter Rock, Scissors or Paper!  Open console to check results!", "Rock"); 
-                if (!playerSelection) {
-                    i--;
-                    console.log ("Please enter correct value in the field!");
-                }else {
-                    playerSelection = capitalize(playerSelection);
-                    console.log(playSingleRound(playerSelection, computerSelection)) ;
-                }
-               
-            }
-        }
-
-        // SINGLE TIME
-        // let playerSelection = "rock";
-        // playerSelection = capitalize(playerSelection);
-        // let computerSelection = computerPlay();
-        // console.log(computerSelection);
-        // console.log(playerSelection);
-        // console.log(playSingleRound(playerSelection, computerSelection));
-        
-        console.log(game());
-    </script>
+    <script src="game.js"></script>
 </body>
 </html>
