@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 :root {
@@ -94,4 +95,53 @@ p {
 .game-over button:hover {
     transform: scale(1.1);
     opacity: 0.9;
+}
+
+@media (max-width: 678px) {
+    body {
+        background-color: #ad9a9a;
+    }
+    .container{
+        width: 100%;
+        border-radius: 0;
+    }
+    img {
+        display: flex;
+        max-height: 30px;
+        max-width: 50px;
+        border-radius: 10px;
+        
+    }
+    .btn {    
+        
+        font-size: small;
+        padding: 10px;
+        border-radius: 10px;
+        margin:20px;
+    }
+    .player, .computer, .rounds {
+        background-color: var(--orange);
+        padding: 5px;
+        width: 33%;    
+      
+    }
+    .rounds{
+        background:none
+    }
+    .game-over{
+        font-size: small;
+    }
+    .game-over button {
+        background-color: var(--red);
+        color: var(--white);
+        border: none;
+        border-radius: 30px;
+        padding: 10px;
+        font-size: 15px;
+        margin-top: 30px;        
+    }
+    
+    h1 {
+        font-size: x-large;
+    }
 }
